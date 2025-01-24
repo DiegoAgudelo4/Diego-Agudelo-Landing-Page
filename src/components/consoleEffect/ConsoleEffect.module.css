@@ -1,0 +1,15 @@
+
+  .hiddenText {
+    opacity: 0;
+  }
+  .consoleContainer {
+    text-align: center;
+    align-content: center;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+  }
+  .consoleUnderscore {
+    display: inline-block;
+  }
+  
