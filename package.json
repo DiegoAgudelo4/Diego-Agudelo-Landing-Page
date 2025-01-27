@@ -2,7 +2,7 @@
   "name": "diego-agudelo-landing-page",
   "private": true,
   "version": "0.0.0",
-  "homepage": "http://DiegoAgudelo4.github.io/Diego-Agudelo-Landing-Page",
+  "homepage": "https://diegoagudelo4.github.io/Diego-Agudelo-Landing-Page",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
