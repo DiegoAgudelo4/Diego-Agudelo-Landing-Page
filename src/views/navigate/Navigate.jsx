@@ -27,21 +27,29 @@ const Navigate = () => {
     };
   }, [lastScrollY]);
 
+  const handleScrollTo = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    console.log("scroll",  sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <div className={`${styles.main} ${!isVisible ? styles.hidden : ''}`}>
-      <ConsoleEffect preText='~$' texts={['Diego Alejandro', 'Agudelo Rendon', 'Ingeniero Informático']} colors={['white', 'white']}/>
+      <ConsoleEffect preText='~$' texts={[ 'Página en construcción','Diego Alejandro', 'Agudelo Rendon']} colors={['white', 'white']}/>
       <div className={styles.buttons}>
-        <div className={styles.btn}>
-          <Button text="Home" />
+        <div className={styles.btn} onClick={() => handleScrollTo('home')}>
+          <Button text="Home"/>
         </div>
-        <div className={styles.btn}>
-          <Button text="Experience" />
-        </div>
-        <div className={styles.btn}>
+        <div className={styles.btn} onClick={() => handleScrollTo('about')}>
           <Button text="About Me" />
         </div>
-        <div className={styles.btn}>
+        <div className={styles.btn} onClick={() => handleScrollTo('experience')}>
+          <Button text="Experience" />
+        </div>
+        <div className={styles.btn} onClick={() => handleScrollTo('contact')}>
           <Button text="Contact" />
         </div>
       </div>

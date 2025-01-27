@@ -31,12 +31,12 @@ const consoleText = (words, id, colors) => {
                 x = -1;
                 letterCount += x;
                 waiting = false;
-            }, 10000); //espera para volver a borrar
+            }, 3000); //espera para volver a borrar
         } else if (waiting === false) {
             target.innerHTML = words[0].substring(0, letterCount);
             letterCount += x;
         }
-    }, 120);
+    }, 60);//velocidad de escritura
 
     const blinkId = setInterval(() => {
         if (visible === true) {

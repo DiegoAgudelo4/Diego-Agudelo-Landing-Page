@@ -1,8 +1,10 @@
-import React from 'react'
+import styles from './Habilities.module.css';
 
 const Habilities = () => {
   return (
-    <div>Habilities</div>
+    <div className={styles.main} id='about'>
+      About Me
+    </div>
   )
 }
 
