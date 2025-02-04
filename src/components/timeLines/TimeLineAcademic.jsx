@@ -34,44 +34,42 @@ const TimeLineAcademic = () => {
     )
 
     return (
-        <div >
-            <Chrono
-                items={items}
-                mode='VERTICAL_ALTERNATING'
-                disableToolbar='true'
-                theme={{
-                    primary: '#FF4655',
-                    secondary: '#0E1822',
-                    cardBgColor: 'white',
-                    titleColor: 'black',
-                    titleColorActive: 'white',
-                }}
-                fontSizes={{
-                    cardSubtitle: '0.85rem',
-                    cardText: '0.8rem',
-                    cardTitle: '1rem',
-                    title: '1rem',
-                }}
-                classNames={{
-                    card: styles.mycard,
-                    // cardMedia: 'my-card-media',
-                    // cardSubTitle: 'my-card-subtitle',
-                    cardText: 'my-card-text',
-                    cardTitle: styles.mycardtitle,
-                    controls: styles.mycontrols,
-                    title: styles.mytitle,
-                }}
-                // textOverlay
-            >
-                {/* <div
+        <Chrono
+            items={items}
+            mode='VERTICAL_ALTERNATING'
+            disableToolbar='true'
+            theme={{
+                primary: '#FF4655',
+                secondary: '#0E1822',
+                cardBgColor: 'white',
+                titleColor: 'black',
+                titleColorActive: 'white',
+            }}
+            fontSizes={{
+                cardSubtitle: '0.85rem',
+                cardText: '0.8rem',
+                cardTitle: '1rem',
+                title: '1rem',
+            }}
+            classNames={{
+                card: styles.mycard,
+                // cardMedia: 'my-card-media',
+                // cardSubTitle: 'my-card-subtitle',
+                cardText: 'my-card-text',
+                cardTitle: styles.mycardtitle,
+                controls: styles.mycontrols,
+                title: styles.mytitle,
+            }}
+        // textOverlay
+        >
+            {/* <div
                 >
                     <p>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum</p>
                 </div>
                 <div>
                     <img src="<url to  a nice image" />
                 </div> */}
-            </Chrono>
-        </div>
+        </Chrono>
     )
 }
 

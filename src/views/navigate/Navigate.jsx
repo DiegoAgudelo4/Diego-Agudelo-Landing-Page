@@ -29,7 +29,6 @@ const Navigate = () => {
 
   const handleScrollTo = (sectionId) => {
     const section = document.getElementById(sectionId);
-    console.log("scroll",  sectionId)
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
