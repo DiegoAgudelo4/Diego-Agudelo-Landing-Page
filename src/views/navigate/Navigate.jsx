@@ -36,7 +36,8 @@ const Navigate = () => {
 
 
   return (
-    <div className={`${styles.main} ${!isVisible ? styles.hidden : ''}`}>
+    // <div className={`${styles.main} ${!isVisible ? styles.hidden : ''}`}>
+    <div className={`${styles.main} `}>
       <ConsoleEffect preText='~$' texts={[ 'Página en construcción','Diego Alejandro', 'Agudelo Rendon']} colors={['white', 'white']}/>
       <div className={styles.buttons}>
         <div className={styles.btn} onClick={() => handleScrollTo('home')}>
