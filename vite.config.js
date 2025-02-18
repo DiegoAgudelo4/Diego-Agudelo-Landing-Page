@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: "/Diego-Agudelo-Landing-Page/",
   plugins: [react()],
+  resolve: {
+    alias: {
+      "@layout": "/src/layout", 
+    },
+  },
 })
