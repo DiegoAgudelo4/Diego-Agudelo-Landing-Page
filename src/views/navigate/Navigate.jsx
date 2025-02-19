@@ -44,7 +44,7 @@ const Navigate = () => {
     { text: 'About Me', to: 'about', nav: '/' },
     { text: 'Experience', to: 'experience', nav: '/' },
     { text: 'Contact', to: 'contact', nav: '/' },
-    // { text: 'Projects', nav: '/my-proyects' },
+    { text: 'Projects', nav: '/my-proyects' },
   ];
 
   return (
