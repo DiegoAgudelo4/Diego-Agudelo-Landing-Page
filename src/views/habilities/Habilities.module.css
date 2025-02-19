@@ -10,10 +10,10 @@
     
 }
 .Habilities{
-    width: 50%;
+    width: 100%;
 }
 .description{
-    width: 50%;
+    width: 100%;
     padding: 20px;
     display: flex;
     flex-direction: column;

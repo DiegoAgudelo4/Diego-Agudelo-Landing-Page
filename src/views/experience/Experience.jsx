@@ -9,6 +9,7 @@ const Experience = () => {
       display: 'flex',
       flexDirection: {xs: 'column', md:'row' }
     }}
+    id='experience'
     >
       <div className={styles.experience}>
         <h3>
