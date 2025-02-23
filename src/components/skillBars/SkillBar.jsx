@@ -1,18 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from './SkillBar.module.css'
-
-// const SKILLS = [
-//     { type: "HTML", level: 99 },
-//     { type: "CSS", level: 98 },
-//     { type: "JavaScript", level: 87 },
-//     { type: "MongoDB", level: 92 },
-//     { type: "BootStrap", level: 90 },
-//     { type: "Photoshop", level: 100 },
-//     { type: "Angular.js", level: 16 },
-//     { type: "React.js", level: 25 },
-//     { type: "PHP", level: 36 },
-//     { type: "Ruby", level: 20 }
-// ];
+import Title from "../texts/Title";
 
 const SKILLS = [
     {
@@ -57,9 +45,9 @@ const SKILLS = [
         title: "Herramientas de desarrollo",
         porcent: false,
         items: [
-            { type: "Git"},
-            { type: "Docker"},
-            { type: "Jenkins"},
+            { type: "Git" },
+            { type: "Docker" },
+            { type: "Jenkins" },
         ]
     },
     {
@@ -113,72 +101,37 @@ const SkillBars = ({ hue = 580, saturation = 50, skills = SKILLS }) => {
     return (
         <div className={`${styles.container} ${collapsed ? `${styles.collapsed}` : ""}`}>
 
-            <h3>Habilidades</h3>
-            <hr />
+            <Title text={"Habilidades"} variant="h5"/>
             <ul className={styles.skills}>
                 {SKILLS.map((skill, index) => (
-                    <>
-                        <div style={{ marginBottom: '10px' }}>
-                            <h4>{skill.title}</h4>
-                            {skill.porcent ?
-                                skill.items.map((item, index) => (
-                                    <li
-                                        key={item.type}
-                                        style={{
-                                            width: `${item.level}%`,
-                                            backgroundColor: `hsl(${hue}, ${saturation}%, ${100 / (index + 3.5)}%)`
-                                        }}
-                                        className={styles.listSkills}
-                                    >
-                                        <p>
-                                            {item.type}<span>{item.level}</span>
-                                        </p>
-                                    </li>
-                                ))
-                                :
-                                <p>
-                                    {skill.items.map(item => item.type).join(", ") + "."}
-                                </p>
-                            }
-                        </div>
-                    </>
+                    <div key={index} style={{ marginBottom: '10px' }}>
+                        <h4>{skill.title}</h4>
+                        {skill.porcent ?
+                            skill.items.map((item, index) => (
+                                <li
+                                    key={item.type}
+                                    style={{
+                                        width: `${item.level}%`,
+                                        backgroundColor: `hsl(${hue}, ${saturation}%, ${100 / (index + 3.5)}%)`
+                                    }}
+                                    className={styles.listSkills}
+                                >
+                                    <p>
+                                        {item.type}<span>{item.level}</span>
+                                    </p>
+                                </li>
+                            ))
+                            :
+                            <p>
+                                {skill.items.map(item => item.type).join(", ") + "."}
+                            </p>
+                        }
+                    </div>
                 ))}
-
             </ul>
-            {/* 
-            <h3>Habilidades</h3>
-            <hr />
-            <ul className={styles.skills}>
-                {skills.map((skill, index) => (
-                    <li
-                        key={skill.type}
-                        style={{
-                            width: `${skill.level}%`,
-                            backgroundColor: `hsl(${hue}, ${saturation}%, ${100 / (index + 3.5)}%)`
-                        }}
-                        className={styles.listSkills}
-                    >
-                        <p>
-                            {skill.type}<span>{skill.level}</span>
-                        </p>
-                    </li>
-                ))}
-                <li
-                    style={{
-                        width: `${50}%`,
-                        backgroundColor: `hsl(${hue}, ${saturation}%, ${100 / (5 + 3.5)}%)`
-
-                    }}
-                    className={styles.listSkills}
-                >
-                    <p>
-                        <a href="https://cert.efset.org/en/gP8ZVQ"> Inglés</a><span> 50</span>
-                    </p>
-
-                </li>
-            </ul> */}
         </div>
     );
+
 };
 
 export default SkillBars;

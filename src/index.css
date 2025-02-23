@@ -45,7 +45,21 @@
   z-index: 0;
 }
 
+/* altura de la navbar */
+.nav-top-padding{
+  padding-top: 70px;
+}
 
+.MuiListItem-root:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  cursor: pointer;
+  border-bottom: 2px solid #FF4655;
+}
+
+.active {
+  border-bottom: 2px solid #FF4655;
+}
 /* a {
   font-weight: 500;
   color: #646cff;

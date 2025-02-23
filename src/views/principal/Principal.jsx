@@ -3,7 +3,7 @@ import styles from './Principal.module.css';
 const Principal = () => {
   return (
     <>
-      <div className={styles.main} id='home'>
+      <div className={styles.main} id='hm-home'>
         <section className={styles.header} >
           <div className={styles.titleWrapper}>
             <h1 className={styles.title}>

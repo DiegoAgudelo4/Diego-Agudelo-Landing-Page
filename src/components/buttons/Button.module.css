@@ -24,6 +24,19 @@
     color: white;
     background-position: 40%;
    }
+   .primaryButton.active {
+      border: 1px solid #FF4655;
+      color: white;
+      background-position: 40%;
+  }
+  
+  .primaryButton.active:before {
+      background-color: white;
+  }
+  
+  .primaryButton.active:after {
+      background-color: white;
+  }
    
    .primaryButton:before {
     content: "";
@@ -84,8 +97,4 @@
     border-top: 0px;
        /* opacity: 0.3; */
     z-index: 0;
-   }
-   
-   .shape {
-    fill: #0E1822;
    }

@@ -2,25 +2,23 @@ import { Box } from '@mui/material'
 import TimeLineAcademic from '../../components/timeLines/TimeLineAcademic'
 import TimeLine from '../../components/timeLines/TimeLineExperience'
 import styles from './Experience.module.css'
+import Title from '../../components/texts/Title'
 const Experience = () => {
   return (
-    <Box
-    sx={{
-      display: 'flex',
-      flexDirection: {xs: 'column', md:'row' }
-    }}
-    id='experience'
+    <Box id='hm-experience'
+      className={`nav-top-padding`}
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', md: 'row' }
+      }}
+
     >
       <div className={styles.experience}>
-        <h3>
-          Experiencia Laboral
-        </h3>
-        <hr />
+        <Title text={"Experiencia Laboral"} variant='h5'/>
         <TimeLine />
       </div>
       <div className={styles.academic}>
-        <h3>Estudios</h3>
-        <hr />
+      <Title text={"Estudios"} variant='h5'/>
         <TimeLineAcademic />
       </div>
     </Box>

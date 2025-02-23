@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import HomeLayout from "../../layout/HomeLayout";
 
 // Importaciones de Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,16 +6,28 @@ import "swiper/css";
 import "swiper/css/autoplay"; // Opcional: para el módulo autoplay
 import { Autoplay } from "swiper/modules";
 import ProyectList from "../../components/proyects/ProyectList";
+import { motion } from "framer-motion"
+import { useEffect } from "react";
 
-const imgs = ['ISIBI/HomeISIBI.png', 'ISIBI/LoginISIBI.png', 'ISIBI/BusquedaAvanzada.png','ISIBI/PanelDeControl.png', 'Hikari/Home.png', 'Hikari/Catalogo.png']
+const imgs = ['img/ISIBI/HomeISIBI.png', 'img/ISIBI/LoginISIBI.png', 'img/ISIBI/BusquedaAvanzada.png', 'img/ISIBI/PanelDeControl.png', 'img/Hikari/Home.png', 'img/Hikari/Catalogo.png']
 
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};
 const Proyects = () => {
+    useEffect(() => {
+        scrollToTop()
+    }, [])
+
     return (
-        <HomeLayout>
-            <Box
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <Box className={`nav-top-padding`}
                 sx={{
                     minHeight: '100vh',
-                    paddingTop: '10vh',
+                    marginTop: '20px'
                 }}
             >
                 {/* <h2>Proyectos</h2> */}
@@ -40,7 +51,7 @@ const Proyects = () => {
                                 }}
                             >
                                 <img
-                                    src={`img/${img}`}
+                                    src={`${img}`}
                                     alt={`${img}`}
                                     style={{
                                         width: '100%',
@@ -53,9 +64,9 @@ const Proyects = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <ProyectList/>
+                <ProyectList />
             </Box>
-        </HomeLayout>
+        </motion.div>
     );
 };
 

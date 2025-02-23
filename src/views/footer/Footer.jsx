@@ -8,7 +8,7 @@ const Footer = () => {
     }
   };
   return (
-    <div className={styles.main} id='contact'>
+    <div className={styles.main} id='hm-contact'>
       <div className={styles.footerBasic}>
         Contáctame via redes sociales
         <footer style={{ marginTop: '20px' }}>

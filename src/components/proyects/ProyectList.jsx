@@ -1,14 +1,17 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Box, Grid2 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 // Datos de ejemplo
 const projectData = [
     {
+        id: 'isibi',
         title: 'ISIBI',
         description: 'Integrador de sistemas de información Bibliográfica',
         image: 'img/ISIBI/HomeISIBI.png',
     },
     {
+        id: 'hikari',
         title: 'Hikari Tienda de ropa',
         description: 'Página web de una tienda de ropa',
         image: 'img/Hikari/Home.png',
@@ -16,8 +19,9 @@ const projectData = [
 ];
 
 export const ProyectList = () => {
+    const navigate  = useNavigate()
     return (
-        <Box sx={{ padding: '2rem' }}>
+        <Box sx={{ padding: '2rem', minHeight: '100vh' }}>
             <Typography variant="h4" gutterBottom>
                 Lista de Proyectos
             </Typography>
@@ -29,7 +33,8 @@ export const ProyectList = () => {
                                 component="img"
                                 image={project.image}
                                 alt={project.title}
-                                sx={{ height: 250 }} 
+                                sx={{ height: 250, cursor: 'pointer' }} 
+                                onClick={() => navigate(`/my-projects/${project.id}`)}
                             />
                             <CardContent sx={{ flexGrow: 1 }}>
                                 <Typography gutterBottom variant="h5" component="div">

@@ -1,18 +1,20 @@
 import { Box } from '@mui/material';
 import SkillBars from '../../components/skillBars/SkillBar';
 import styles from './Habilities.module.css';
+import Title from '../../components/texts/Title';
 
 const Habilities = () => {
   return (
-    <div className={styles.main} id='about'>
+    <div className={styles.main} id='hm-about'>
       <Box
+        className={`nav-top-padding`}
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' }
         }}>
         <div className={styles.description}>
-          <h3>Descripción personal</h3>
-          <hr />
+          <Title text={'Descripción personal'} variant='h5'/>
+          {/* <hr /> */}
           <p>
             Estudiante de ingeniería informática en últimos semestres con
             una sólida formación académica e interés en el desarrollo de
@@ -29,10 +31,7 @@ const Habilities = () => {
             positiva. Además acepta las críticas constructivas como
             oportunidades valiosas para mejorar y crecer profesionalmente.
           </p>
-          <h3>
-            Información Personal
-          </h3>
-          <hr />
+          <Title text={'Información personal'} variant='h5'/>
           <p>
             <strong>Fecha de Nacimiento: </strong> 4 de Marzo de 2002
           </p>
