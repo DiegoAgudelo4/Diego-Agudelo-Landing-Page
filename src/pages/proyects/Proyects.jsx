@@ -5,19 +5,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay"; // Opcional: para el módulo autoplay
 import { Autoplay } from "swiper/modules";
-import ProyectList from "../../components/proyects/ProyectList";
+
+import ProyectList from "@components/proyects/ProyectList";
 import { motion } from "framer-motion"
 import { useEffect } from "react";
+import { scrollToTop } from "@utils/ScrollTo";
 
 const imgs = ['img/ISIBI/HomeISIBI.png', 'img/ISIBI/LoginISIBI.png', 'img/ISIBI/BusquedaAvanzada.png', 'img/ISIBI/PanelDeControl.png', 'img/Hikari/Home.png', 'img/Hikari/Catalogo.png']
 
-const scrollToTop = () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
-};
+
 const Proyects = () => {
+
     useEffect(() => {
         scrollToTop()
     }, [])

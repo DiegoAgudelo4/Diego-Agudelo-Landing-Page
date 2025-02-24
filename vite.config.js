@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/Diego-Agudelo-Landing-Page/",
+  base: process.env.NODE_ENV === "production" ? "/Diego-Agudelo-Landing-Page/" : "/",
   plugins: [react()],
   resolve: {
     alias: {
@@ -11,6 +11,7 @@ export default defineConfig({
       "@components": "/src/components", 
       "@pages": "/src/pages", 
       "@views": "/src/views", 
+      "@utils": "/src/utils", 
     },
   },
 })

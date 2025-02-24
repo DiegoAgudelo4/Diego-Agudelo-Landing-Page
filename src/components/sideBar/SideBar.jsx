@@ -28,24 +28,28 @@ const SideBar = ({ sections = sectionsDefault, anchor = 'right' }) => {
             anchor={anchor}
             sx={{
                 "& .MuiDrawer-paper": {
+                    // marginTop: '70px',
+                    // marginBottom: '70px',
                     // width: '200px',
+                    // inlineSize: "max-content",
                     height: "100%",
                     position: "fixed",
-                    top: 0,
+                    // top: 0,
                     // right: 0,
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     // alignItems: "center",
                     background: "transparent",
-                    zIndex: '9'
+                    zIndex: '9',
+                    overflow: 'hidden'
                 },
             }}
         >
             <List
-                sx={{
-                    // background: 'black'
-                }}
+                // sx={{
+                //     background: 'black'
+                // }}
             >
                 {sections.map((section) => (
                     <ListItem

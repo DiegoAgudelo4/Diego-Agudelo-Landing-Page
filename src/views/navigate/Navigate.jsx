@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ConsoleEffect from '../../components/consoleEffect/ConsoleEffect';
 import { motion } from "framer-motion"
 import useSectionObserver from '../../hooks/useSectionObserver';
+import { handleScrollTo } from '../../utils/ScrollTo';
 
 const sections = [
   { id: 'hm-home', text: 'Inicio' },
@@ -39,10 +40,7 @@ const Navigate = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const handleScrollTo = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) section.scrollIntoView({ behavior: 'smooth' });
-  };
+
   const handleNavClick = (to, nav = '/') => () => handleClick({ to, nav });
 
   const handleClick = ({ to = null, nav = null }) => {
