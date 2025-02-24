@@ -5,7 +5,7 @@ const Section = ({ secId, title = null, children }) => (
     <Box id={secId}
         className={`nav-top-padding`}
         sx={{
-            minHeight: '100vh',
+            // minHeight: '100vh',
             width: '100%',
             textAlign: 'center',
             maxWidth: 'calc(100% - 60px)',
@@ -18,7 +18,7 @@ const Section = ({ secId, title = null, children }) => (
         {/* Contenido */}
         <Box
             sx={{
-                padding: '20px 0px'
+                padding: '10px 0px'
             }}
         >
             {children}

@@ -16,7 +16,7 @@ const sectionsDefault = [
 
 const SideBar = ({ sections = sectionsDefault, anchor = 'right' }) => {
     const navigate = useNavigate()
-    const activeSection = useSectionObserver('py', 0.4)
+    const activeSection = useSectionObserver('py', 0.8)
 
     const handleClick = (id) => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

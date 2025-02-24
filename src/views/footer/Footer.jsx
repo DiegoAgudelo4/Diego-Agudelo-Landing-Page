@@ -8,6 +8,9 @@ import ViteLogo from '/img/logo/vite-logo.png';
 import SwiperLogo from '/img/logo/swiper-logo.svg';
 import FramerLogo from '/img/logo/framer-logo.png';
 
+const numeroCelular= '+573134171749'
+const mensajeDefecto = 'Mi Web: Hola, me encantaría saber más de ti.'
+
 const Footer = () => {
   return (
     <div className={styles.main} id="hm-contact">
@@ -20,6 +23,9 @@ const Footer = () => {
             </a>
             <a href="https://github.com/DiegoAgudelo4">
               <i className="icon ion-social-github"></i>
+            </a>
+            <a href={`https://wa.me/${numeroCelular}?text=${mensajeDefecto}`}>
+              <i className="icon ion-social-whatsapp"></i>
             </a>
           </div>
 
