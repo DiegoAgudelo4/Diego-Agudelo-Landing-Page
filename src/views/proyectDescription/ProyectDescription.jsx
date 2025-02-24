@@ -50,21 +50,23 @@ const proyectInfoData =
                 ]
             },
         ],
-        descriptionList: [
-            {
-                text: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia deleniti aut magnam nemo repellendus assumenda necessitatibus, ipsum quod adipisci explicabo laboriosam iure, unde quam alias inventore eaque odit ad incidunt!`,
-                image: 'img/ISIBI/HomeISIBI.png',
-                imagePlace: 'left'
-            },
-            {
-                text: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia deleniti aut magnam nemo repellendus assumenda necessitatibus, ipsum quod adipisci explicabo laboriosam iure, unde quam alias inventore eaque odit ad incidunt!`,
-                image: 'img/ISIBI/HomeISIBI.png',
-                imagePlace: 'right'
-            },
-        ]
     }, {
         id: 'hikari',
-        title: 'Hikari Tienda de ropa'
+        title: 'Hikari: Tienda de ropa',
+        sections: [
+            {
+                id: "py-home",
+                label: "Inicio",
+                title: "Hikari Tienda de ropa",
+                bodyList: [
+                    {
+                        text: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia deleniti aut magnam nemo repellendus assumenda necessitatibus, ipsum quod adipisci explicabo laboriosam iure, unde quam alias inventore eaque odit ad incidunt!`,
+                        image: 'img/Hikari/Home.png',
+                        imagePlace: 'left'
+                    },
+                ]
+            },
+        ],
     }
     ]
 
@@ -72,14 +74,7 @@ const ProyectDescription = () => {
     const { id } = useParams();
 
     const [proyectInfo, setProyectInfo] = useState(null);
-    const [sections, setSections] = useState([
-        // { id: "py-home", label: "Inicio" },
-        // { id: "py-drescription", label: "Descripcion" },
-        // { id: "py-tech-used", label: "Tecnologías usadas" },
-        // { id: "py-arch", label: "Arquitectura usada" },
-        // { id: "py-test", label: "Pruebas" },
-        // { id: "py-deploy", label: "Despliegue" },
-    ])
+    const [sections, setSections] = useState([])
 
     useEffect(() => {
         const foundProject = proyectInfoData.find((project) => project.id === id);
@@ -111,8 +106,8 @@ const ProyectDescription = () => {
                             {proyectInfo.sections.map((section) => (
                                 <Section key={section.id} secId={section.id} title={section.title}>
 
-                                    {proyectInfo.descriptionList.map((description, index) => (
-                                        <BodySection key={`${proyectInfo.title}-description-${index}`} title={proyectInfo.title} image={description.image} text={description.text} float={description.imagePlace} />
+                                    {section.bodyList.map((body, index) => (
+                                        <BodySection key={`${proyectInfo.title}-section-${index}`} title={proyectInfo.title} image={body.image} text={body.text} float={body.imagePlace} />
                                     ))}
 
                                 </Section>

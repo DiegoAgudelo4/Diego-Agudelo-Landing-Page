@@ -1,7 +1,7 @@
 {
   "name": "diego-agudelo-landing-page",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://diegoagudelo4.github.io/Diego-Agudelo-Landing-Page",
   "type": "module",
   "scripts": {

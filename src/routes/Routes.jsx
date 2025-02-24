@@ -10,7 +10,7 @@ const AppRouter = () => {
     import.meta.env.MODE === "production" ? "/Diego-Agudelo-Landing-Page" : "/";
 
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename={"/Diego-Agudelo-Landing-Page"}>
       <MobileWarning />
       <HomeLayout>
         <Routes>
