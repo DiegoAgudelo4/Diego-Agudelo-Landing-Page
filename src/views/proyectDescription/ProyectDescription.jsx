@@ -16,8 +16,8 @@ const proyectInfoData =
         title: 'ISIBI: Integrador de sistemas de información Bibliográfica',
         sections: [
             {
-                id: "py-home",
-                label: "Inicio",
+                id: "py-indroduction",
+                label: "Introducción",
                 title: "ISIBI: Integrador de sistemas de información Bibliográfica",
                 bodyList: [
                     {

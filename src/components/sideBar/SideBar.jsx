@@ -58,9 +58,12 @@ const SideBar = ({ sections = sectionsDefault, anchor = 'right' }) => {
                         onClick={() => handleClick(section.id)}
                         className={activeSection === section.id ? "active" : ""}
                         sx={{
-                            color: activeSection === section.id ? '#ffffff' : '#A8A2C8',
+                            color: activeSection === section.id ? '#FFFFFF' : '#A8A2C8',
                             transform: activeSection === section.id ? "scale(1.1)" : "scale(1)", // Efecto zoom
                             transition: "transform 0.2s ease-in-out",
+                            '&:hover':{
+                                color: '#FFFFFF'
+                            }
                         }}
                     >
                         <ListItemText primary={section.label}

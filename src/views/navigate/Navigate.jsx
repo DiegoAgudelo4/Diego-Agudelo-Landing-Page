@@ -15,11 +15,19 @@ const sections = [
   { id: 'hm-contact', text: 'Contacto' }
 ];
 
+
+
 const Navigate = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [menuItems, setMenuItems] = useState([])
+  const [menuItems, setMenuItems] = useState([
+    { text: 'Home', to: 'home', nav: '/' },
+    { text: 'About Me', to: 'about', nav: '/' },
+    { text: 'Experience', to: 'experience', nav: '/' },
+    { text: 'Contact', to: 'contact', nav: '/' },
+    { text: 'Projects', nav: '/my-projects' },
+  ])
   const navigate = useNavigate();
   const location = useLocation();
   const sectionObserved = useSectionObserver("hm", 0.4);
@@ -46,6 +54,8 @@ const Navigate = () => {
   const handleClick = ({ to = null, nav = null }) => {
     if (to) handleScrollTo(to);
     if (nav) navigate(nav);
+
+    setDrawerOpen(false)
   };
 
 
@@ -107,15 +117,33 @@ const Navigate = () => {
 
 
       {/* Drawer para navegación móvil */}
-      <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        sx={{
+          '& .MuiDrawer-paper': { 
+            backgroundColor: '#242424',
+            color: '#fff'
+          }
+        }}
+      >
+
         <List sx={{ width: 250 }}>
-          {menuItems.map((item) => (
-            <ListItem key={item.text} disablePadding>
-              <ListItemButton onClick={() => { handleClick(item); setDrawerOpen(false); }}>
-                <ListItemText primary={item.text} />
-              </ListItemButton>
-            </ListItem>
+          {sections.map(({ id, text }) => (
+            (!location.pathname.includes('my-projects') || id === 'hm-home') && (
+              <ListItem key={id} onClick={handleNavClick(id)} disablePadding>
+                <ListItemButton >
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            )
           ))}
+          <ListItem disablePadding>
+            <ListItemButton onClick={handleNavClick(null, '/my-projects')}>
+              <ListItemText primary={'Proyectos'} active={location.pathname.includes('my-projects')} />
+            </ListItemButton>
+          </ListItem>
         </List>
       </Drawer>
     </>

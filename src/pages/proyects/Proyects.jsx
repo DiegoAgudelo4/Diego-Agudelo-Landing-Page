@@ -5,13 +5,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay"; // Opcional: para el módulo autoplay
 import { Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 import ProyectList from "@components/proyects/ProyectList";
 import { motion } from "framer-motion"
 import { useEffect } from "react";
 import { scrollToTop } from "@utils/ScrollTo";
 
-const imgs = ['img/ISIBI/HomeISIBI.png', 'img/ISIBI/LoginISIBI.png', 'img/ISIBI/BusquedaAvanzada.png', 'img/ISIBI/PanelDeControl.png', 'img/Hikari/Home.png', 'img/Hikari/Catalogo.png']
+const imgs = [
+    'img/ISIBI/HomeISIBI.png', 'img/ISIBI/LoginISIBI.png', 'img/ISIBI/BusquedaAvanzada.png', 'img/ISIBI/PanelDeControl.png',
+    // 'img/Hikari/Home.png', 'img/Hikari/Catalogo.png'
+]
 
 
 const Proyects = () => {
@@ -30,7 +34,8 @@ const Proyects = () => {
             >
                 {/* <h2>Proyectos</h2> */}
                 <Swiper
-                    modules={[Autoplay]}
+                    modules={[Autoplay, Pagination]}
+                    navigation
                     spaceBetween={30}
                     slidesPerView={1}
                     autoplay={{ delay: 6000, disableOnInteraction: false }}
@@ -46,6 +51,7 @@ const Proyects = () => {
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     overflow: 'hidden',
+                                    cursor: 'pointer'
                                 }}
                             >
                                 <img
